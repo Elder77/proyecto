@@ -19,7 +19,7 @@
         }
         
         public function listar(){
-            $sql = " SELECT * FROM secciones";
+            $sql = " SELECT * FROM secciones ORDER BY nombre ASC";
             $datos = $this->con->consultaRetorno($sql);
             return $datos;
         }
@@ -30,13 +30,13 @@
 
         public function delete(){
             $sql = "DELETE FROM secciones WHERE id = '{$this->id}'";
-            $this->con->consultaRetorno($sql);
+			$this->con->consultaRetorno($sql);
         }
 
         public function edit(){
-            $sql = "UPDATE FROM secciones SET nombre = '{$this->nombre}' WHERE id ='{$this->id}'";
-            $this->con->consultaSimple($sql);
-        }
+			$sql = "UPDATE secciones SET nombre = '{$this->nombre}' WHERE id = '{$this->id}'";
+			$this->con->consultaSimple($sql);
+		}
 
         public function view(){
             $sql = "SELECT * FROM secciones WHERE id='{$this->id}'";

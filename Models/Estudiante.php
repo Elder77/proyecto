@@ -36,8 +36,8 @@
         }
 
         public function delete(){
-            $sql = "DELETE FROM estudiantes WHERE id = '{this->id}'";
-            $this->con->consultaSimple($sql);
+            $sql = "DELETE FROM estudiantes WHERE id = '{$this->id}'";
+			$this->con->consultaSimple($sql);
         }
 
         public function edit(){
